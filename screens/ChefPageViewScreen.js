@@ -155,7 +155,7 @@ class ChefPageViewScreen extends React.Component {
 
   render() {
     const details = this.props.route.params.details;
-    const {height, width} = Dimensions.get('window'); //This must be in the render function to adjust to device rotation
+    const { height, width } = Dimensions.get('window'); //This must be in the render function to adjust to device rotation
 
     const styles = StyleSheet.create({
       flex: {
@@ -241,6 +241,15 @@ class ChefPageViewScreen extends React.Component {
       dishDetailsContainer: {
         flexDirection: 'column',
         justifyContent: 'space-around',
+        marginLeft: 10
+      },
+      textStylingDishTitle: {
+        textAlign: 'left',
+        fontSize: 16,
+        fontWeight: '500',
+        marginVertical: 1,
+        marginBottom: 4,
+        paddingTop: 1,
         marginLeft: 6
       }        
 
@@ -260,16 +269,13 @@ class ChefPageViewScreen extends React.Component {
     let context = this;
 
     return (
+
       <View style={flex}>
         <Text style={ headerTextStyle }>{this.props.details.name}</Text>
         <ScrollView
           style={ container }
           contentContainerStyle={this.props.route.getContentContainerStyle()}>
           <Image style={styles.splashImage} source={{uri: this.props.details.img}}/>
-
-
-
-
         {/*Apply styling About title list*/} 
       <ListItemSection> 
         <View style={ styles.aboutContainer }>  
@@ -295,9 +301,6 @@ class ChefPageViewScreen extends React.Component {
               );
             })}
           </View>
-
-
-
         {/*View for the Quantity stuff*/}  
           <View style={styles.quantity}>    
             <View style={styles.row}>   
